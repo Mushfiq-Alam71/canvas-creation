@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const AddCraft = () => {
 
     const handleAddCraft = event => {
@@ -19,6 +21,27 @@ const AddCraft = () => {
 
         const newCraft = { itemname, subcategory, description, price, rating, customization, processtime, stockstatus, useremail, username, photo };
         console.log(newCraft);
+
+        // send data to server
+        fetch('http://localhost:5000/craft', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newCraft)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Item added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
     }
     return (
         <div className="bg-[#f4f3f0] py-24 px-48">
