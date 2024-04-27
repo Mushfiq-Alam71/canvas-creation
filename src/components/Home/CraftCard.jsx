@@ -3,7 +3,7 @@ import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const CraftCard = ({ craft }) => {
+const CraftCard = ({ craft, crafts, setCrafts }) => {
 
     const { _id, itemname, subcategory, description, price, rating, customization, processtime, stockstatus, useremail, username, photo } = craft;
 
@@ -32,6 +32,8 @@ const CraftCard = ({ craft }) => {
                                 text: "Your craft item has been deleted.",
                                 icon: "success"
                             })
+                            const remaining = crafts.filter(craf => craf._id !== _id)
+                            setCrafts(remaining);
                         }
                     })
             }
@@ -51,7 +53,8 @@ const CraftCard = ({ craft }) => {
                         <button className="btn bg-green-500 hover:bg-green-800 text-2xl text-white rounded-full"><FiEdit /></button>
                     </Link>
                     <button
-                        onClick={() => handleDelete(_id)} className="btn bg-red-500 hover:bg-red-800 text-2xl text-white rounded-full"><MdDelete /></button>
+                        onClick={() => handleDelete(_id)} className="btn bg-red-500 hover:bg-red-800 text-2xl text-white rounded-full"><MdDelete />
+                    </button>
                 </div>
             </div>
         </div>

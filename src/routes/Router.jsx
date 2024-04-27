@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../layout/Root";
-import Home from "../components/Home/Home";
+import AllArtCrafts from "../components/Home/AllArtCrafts";
 import AddCraft from "../components/AddCraft/AddCraft";
 import UpdateCraft from "../components/UpdateCraft/UpdateCraft";
+import Home from "../components/Home/Home";
 
 const router = createBrowserRouter([
     {
@@ -12,6 +13,11 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
+                loader: () => fetch('http://localhost:5000/craft')
+            },
+            {
+                path: '/allartcrafts',
+                element: <AllArtCrafts></AllArtCrafts>,
                 loader: () => fetch('http://localhost:5000/craft')
             },
             {
