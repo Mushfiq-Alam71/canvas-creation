@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -11,7 +11,9 @@ const Navbar = () => {
     </div>
     return (
         <div className="flex items-center justify-between mb-4 my-8">
-            <div>logo</div>
+            <Link to='/'>
+                <h1 className="btn font-bold text-2xl ml-8">Logo</h1>
+            </Link>
             <div>{navLink}</div>
             <div>
                 <NavLink to='/login' className="btn hover:bg-[#4361EE4D] rounded-full text-lg">Login</NavLink>
