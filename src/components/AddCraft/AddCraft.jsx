@@ -167,7 +167,7 @@ const AddCraft = () => {
                         </label>
                     </div>
                 </div>
-                <input type="submit" className="btn btn-block text-white bg-[#04041cd8] hover:bg-[#04041cbf]" value="Add Painting" />
+                <input type="submit" className="btn btn-block text-white bg-[#04041cd8] hover:bg-[#04041cbf]" value="Add Craft" />
             </form>
         </div>
     );

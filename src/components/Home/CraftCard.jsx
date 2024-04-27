@@ -1,9 +1,42 @@
 import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const CraftCard = ({ craft }) => {
 
-    const { itemname, subcategory, description, price, rating, customization, processtime, stockstatus, useremail, username, photo } = craft;
+    const { _id, itemname, subcategory, description, price, rating, customization, processtime, stockstatus, useremail, username, photo } = craft;
+
+    const handleDelete = _id => {
+        console.log(_id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/craft/${_id}`, {
+                    method: "DELETE",
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your craft item has been deleted.",
+                                icon: "success"
+                            })
+                        }
+                    })
+            }
+        });
+    }
     return (
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
             <figure><img src={photo} alt="Shoes" /></figure>
@@ -14,8 +47,11 @@ const CraftCard = ({ craft }) => {
                 <p>{stockstatus}</p>
                 <div className="card-actions justify-evenly">
                     <button className="btn bg-blue-500 hover:bg-blue-800 text-white font-bold rounded-full">View</button>
-                    <button className="btn bg-green-500 hover:bg-green-800 text-2xl text-white rounded-full"><FiEdit /></button>
-                    <button className="btn bg-red-500 hover:bg-red-800 text-2xl text-white rounded-full"><MdDelete /></button>
+                    <Link to={`/updateCraft/${_id}`}>
+                        <button className="btn bg-green-500 hover:bg-green-800 text-2xl text-white rounded-full"><FiEdit /></button>
+                    </Link>
+                    <button
+                        onClick={() => handleDelete(_id)} className="btn bg-red-500 hover:bg-red-800 text-2xl text-white rounded-full"><MdDelete /></button>
                 </div>
             </div>
         </div>
