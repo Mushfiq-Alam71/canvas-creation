@@ -9,8 +9,8 @@ const ContentCard = ({ craft }) => {
                 <h2 className="card-title">{itemname}</h2>
                 {/* <p>{description}</p> */}
                 {
-                    description.length > 200
-                        ? <p>{description.slice(0, 200)} <Link to={`/craft/${_id}`} className="text-blue-500 text-base font-semibold">Read More...</Link></p>
+                    description.length > 100
+                        ? <p>{description.slice(0, 160)} <Link to={`/craft/${_id}`} className="text-blue-500 text-base font-semibold">Read More...</Link></p>
                         : <p>{description}</p>
                 }
                 <p>{subcategory}</p>
