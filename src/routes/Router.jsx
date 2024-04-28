@@ -8,6 +8,8 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import ContactUs from "../components/ContactUs/ContactUs";
 import AboutUs from "../components/AboutUs/AboutUs";
+import ContentDetails from "../components/Home/ContentDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -21,16 +23,16 @@ const router = createBrowserRouter([
             },
             {
                 path: '/allartcrafts',
-                element: <AllArtCrafts></AllArtCrafts>,
+                element: <PrivateRoute><AllArtCrafts></AllArtCrafts></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/craft')
             },
             {
                 path: '/addCraft',
-                element: <AddCraft></AddCraft>
+                element: <PrivateRoute><AddCraft></AddCraft></PrivateRoute>
             },
             {
                 path: '/updateCraft/:id',
-                element: <UpdateCraft></UpdateCraft>,
+                element: <PrivateRoute><UpdateCraft></UpdateCraft></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/craft/${params.id}`)
             },
             {
@@ -48,7 +50,14 @@ const router = createBrowserRouter([
             {
                 path: '/aboutus',
                 element: <AboutUs></AboutUs>
-            }
+            },
+            {
+                path: '/craft/:id',
+                element: <PrivateRoute><ContentDetails></ContentDetails></PrivateRoute>,
+                // loader: () => fetch(`http://localhost:5000/craft/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/craft/${params.id}`)
+
+            },
         ]
     }
 ]);

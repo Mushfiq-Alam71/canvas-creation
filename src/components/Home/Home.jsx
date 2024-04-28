@@ -8,7 +8,7 @@ import ContentCard from "./ContentCard";
 const Home = () => {
     const loadedCrafts = useLoaderData();
     return (
-        <div className="mx-20">
+        <div className="">
             <Navbar></Navbar>
             <Banner></Banner>
             <h1>Now this is home</h1>

@@ -9,7 +9,7 @@ const AllArtCrafts = () => {
     const loadedCrafts = useLoaderData();
     const [crafts, setCrafts] = useState(loadedCrafts);
     return (
-        <div className="m-20">
+        <div className="">
             <Navbar></Navbar>
             <h1>this is (home) All Art & Crafts</h1>
             <h1>Total crafts: {loadedCrafts.length}</h1>
