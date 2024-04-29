@@ -15,7 +15,7 @@ const AllArtCrafts = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr className="text-lg">
+                        <tr className="text-xl">
                             <th></th>
                             <th>Item Name</th>
                             <th>Sub Category</th>
@@ -30,15 +30,15 @@ const AllArtCrafts = () => {
                         {/* row 2 */}
 
                         {
-                            loadedCrafts.map(craft => <tr key={craft._id} className="hover">
-                                <th>2</th>
-                                <td>{craft.itemname}</td>
-                                <td>{craft.subcategory}</td>
-                                <td>{craft.price}</td>
-                                <td>{craft.processtime}</td>
-                                <td>{craft.stockstatus}</td>
-                                <td>{craft.useremail}</td>
-                                <td><Link className="text-blue-600 hover:underline" to={`/craft/${craft._id}`}>View Details</Link></td>
+                            crafts.map((craft, index) => <tr key={craft._id} className="hover">
+                                <th className="py-6 text-lg">{index + 1}</th>
+                                <td className="py-6 text-lg">{craft.itemname}</td>
+                                <td className="py-6 text-lg">{craft.subcategory}</td>
+                                <td className="py-6 text-lg">{craft.price}</td>
+                                <td className="py-6 text-lg">{craft.processtime}</td>
+                                <td className="py-6 text-lg">{craft.stockstatus}</td>
+                                <td className="py-6 text-lg">{craft.useremail}</td>
+                                <td className="py-6 text-lg"><Link className="text-blue-600 hover:underline" to={`/craft/${craft._id}`}>View Details</Link></td>
                             </tr>
                             )
                         }
