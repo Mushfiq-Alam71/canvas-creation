@@ -1,11 +1,14 @@
 import Swal from "sweetalert2";
 import Navbar from "../Header/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const AddCraft = () => {
+    const { user } = useContext(AuthContext);
 
     const handleAddCraft = event => {
         event.preventDefault();
-
+        console.log(user.email);
         const form = event.target;
 
         const itemname = form.itemname.value;
@@ -19,8 +22,9 @@ const AddCraft = () => {
         const useremail = form.useremail.value;
         const username = form.username.value;
         const photo = form.photo.value;
+        const email = user.email;
 
-        const newCraft = { itemname, subcategory, description, price, rating, customization, processtime, stockstatus, useremail, username, photo };
+        const newCraft = { itemname, subcategory, description, price, rating, customization, processtime, stockstatus, useremail, username, photo, email };
         console.log(newCraft);
 
         // send data to server
