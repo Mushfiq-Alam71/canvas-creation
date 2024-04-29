@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import UserCrafts from "../components/Users/UserCrafts";
 import MyArtCrafts from "../components/MyArtCrafts/MyArtCrafts";
+import UserProfile from "../components/UserProfile/UserProfile";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/userprofile',
+                element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
             },
             {
                 path: '/contactus',

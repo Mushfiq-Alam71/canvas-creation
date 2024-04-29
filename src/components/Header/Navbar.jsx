@@ -31,7 +31,14 @@ const Navbar = () => {
             <div>{navLink}</div>
             <div>
                 {user ? (
-                    <button onClick={handleSignOut} className="btn hover:bg-[#4361EE4D] rounded-full text-lg">Sign Out</button>
+                    <div className="flex items-center">
+                        <Link to='/userprofile' tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mr-2 pt-1 pl-1 tooltip" data-tip={user.displayName}>
+                            <div className="w-11 rounded-full">
+                                <img alt="user photo" className="" src={user.photoURL} />
+                            </div>
+                        </Link>
+                        <button onClick={handleSignOut} className="btn hover:bg-[#4361EE4D] rounded-full text-lg">Sign Out</button>
+                    </div>
                 ) : (
                     <>
                         <Link to='/login' className="btn hover:bg-[#4361EE4D] rounded-full text-lg">Login</Link>
