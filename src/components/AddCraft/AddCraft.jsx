@@ -24,7 +24,7 @@ const AddCraft = () => {
         console.log(newCraft);
 
         // send data to server
-        fetch('http://localhost:5000/craft', {
+        fetch('https://b9-a-assignment-10-server-theta.vercel.app/craft', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -54,7 +54,7 @@ const Register = () => {
                 });
                 const createdAt = result.user?.metadata?.creationTime;
                 const user = { email, createdAt };
-                fetch('http://localhost:5000/user', {
+                fetch('https://b9-a-assignment-10-server-theta.vercel.app/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

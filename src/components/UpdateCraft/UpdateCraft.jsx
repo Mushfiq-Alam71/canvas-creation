@@ -27,7 +27,7 @@ const UpdateCraft = () => {
         console.log(newCraft);
 
         // send data to server
-        fetch(`http://localhost:5000/craft/${_id}`, {
+        fetch(`https://b9-a-assignment-10-server-theta.vercel.app/craft/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

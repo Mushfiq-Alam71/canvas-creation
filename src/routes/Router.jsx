@@ -23,12 +23,12 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/craft')
+                loader: () => fetch('https://b9-a-assignment-10-server-theta.vercel.app/craft')
             },
             {
                 path: '/allartcrafts',
                 element: <PrivateRoute><AllArtCrafts></AllArtCrafts></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/craft')
+                loader: () => fetch('https://b9-a-assignment-10-server-theta.vercel.app/craft')
             },
             {
                 path: '/addCraft',
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
             {
                 path: '/updateCraft/:id',
                 element: <PrivateRoute><UpdateCraft></UpdateCraft></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/craft/${params.id}`)
+                loader: ({ params }) => fetch(`https://b9-a-assignment-10-server-theta.vercel.app/craft/${params.id}`)
             },
             {
                 path: '/login',
@@ -62,14 +62,14 @@ const router = createBrowserRouter([
             {
                 path: '/craft/:id',
                 element: <PrivateRoute><ContentDetails></ContentDetails></PrivateRoute>,
-                // loader: () => fetch(`http://localhost:5000/craft/${params.id}`)
-                loader: ({ params }) => fetch(`http://localhost:5000/craft/${params.id}`)
+                // loader: () => fetch(`https://b9-a-assignment-10-server-theta.vercel.app/craft/${params.id}`)
+                loader: ({ params }) => fetch(`https://b9-a-assignment-10-server-theta.vercel.app/craft/${params.id}`)
 
             },
             {
                 path: "/users",
                 element: <UserCrafts></UserCrafts>,
-                loader: () => fetch('http://localhost:5000/user')
+                loader: () => fetch('https://b9-a-assignment-10-server-theta.vercel.app/user')
             }
         ]
     }
