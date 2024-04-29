@@ -1,6 +1,7 @@
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Navbar from "../Header/Navbar";
 import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { NavLink } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { useContext, useEffect, useState } from "react";

@@ -19,6 +19,7 @@ const Navbar = () => {
         <li><NavLink to='/' className={`btn hover:bg-[#4361EE4D] rounded-full text-lg`}>Home</NavLink></li>
         <li><NavLink to='/allartcrafts' className={`btn hover:bg-[#4361EE4D] rounded-full text-lg`}>All Art & Crafts</NavLink></li>
         <li><NavLink to='/addCraft' className={`btn hover:bg-[#4361EE4D] rounded-full text-lg`}>Add Craft Item</NavLink></li>
+        <li><NavLink to='/myartcrafts' className={`btn hover:bg-[#4361EE4D] rounded-full text-lg`}>My Art & Crafts</NavLink></li>
         <li><NavLink to='/contactus' className={`btn hover:bg-[#4361EE4D] rounded-full text-lg`}>Contact Us</NavLink></li>
         <li><NavLink to='/aboutus' className={`btn hover:bg-[#4361EE4D] rounded-full text-lg`}>About</NavLink></li>
     </div>
@@ -30,7 +31,7 @@ const Navbar = () => {
             <div>{navLink}</div>
             <div>
                 {user ? (
-                    <button onClick={handleSignOut} className="btn">Sign Out</button>
+                    <button onClick={handleSignOut} className="btn hover:bg-[#4361EE4D] rounded-full text-lg">Sign Out</button>
                 ) : (
                     <>
                         <Link to='/login' className="btn hover:bg-[#4361EE4D] rounded-full text-lg">Login</Link>

@@ -11,6 +11,8 @@ import AboutUs from "../components/AboutUs/AboutUs";
 import ContentDetails from "../components/Home/ContentDetails";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
+import UserCrafts from "../components/Users/UserCrafts";
+import MyArtCrafts from "../components/MyArtCrafts/MyArtCrafts";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path: '/addCraft',
                 element: <PrivateRoute><AddCraft></AddCraft></PrivateRoute>
+            },
+            {
+                path: '/myartcrafts',
+                elemenet: <MyArtCrafts></MyArtCrafts>
             },
             {
                 path: '/updateCraft/:id',
@@ -60,6 +66,11 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/craft/${params.id}`)
 
             },
+            {
+                path: "/users",
+                element: <UserCrafts></UserCrafts>,
+                loader: () => fetch('http://localhost:5000/user')
+            }
         ]
     }
 ]);
