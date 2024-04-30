@@ -99,7 +99,7 @@ const Navbar = () => {
                 ) : (
                     <div className="hidden lg:flex">
                         <Link to='/login' className="btn btn-outline rounded-full text-lg">Login</Link>
-                        <Link to='/register' className="btn btn-outline rounded-full text-lg">Register</Link>
+                        <Link to='/register' className="btn btn-outline rounded-full text-lg ml-2">Register</Link>
                     </div>
                 )}
             </div>
