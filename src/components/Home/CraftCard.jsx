@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const CraftCard = ({ craft, crafts, setCrafts }) => {
 
-    const { _id, itemname, subcategory, description, price, rating, customization, processtime, stockstatus, useremail, username, photo } = craft;
+    const { _id, itemname, subcategory, description, price, stockstatus, photo } = craft;
 
     const handleDelete = _id => {
         console.log(_id);

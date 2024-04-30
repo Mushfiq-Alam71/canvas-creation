@@ -35,19 +35,18 @@ const Navbar = () => {
             })
     }
 
-    const navLink = <div className="flex flex-col lg:flex-row gap-4 z-10 list-none ">
-        <li><NavLink to='/' className={`btn hover:bg-[#4361EE4D] rounded-full text-lg`}>Home</NavLink></li>
-        <li><NavLink to='/allartcrafts' className={`btn hover:bg-[#4361EE4D] rounded-full text-lg`}>All Art & Crafts</NavLink></li>
-        <li><NavLink to='/addCraft' className={`btn hover:bg-[#4361EE4D] rounded-full text-lg`}>Add Craft Item</NavLink></li>
-        <li><NavLink to='/myartcrafts' className={`btn hover:bg-[#4361EE4D] rounded-full text-lg`}>My Art & Crafts</NavLink></li>
-        <li><NavLink to='/contactus' className={`btn hover:bg-[#4361EE4D] rounded-full text-lg`}>Contact Us</NavLink></li>
-        <li><NavLink to='/aboutus' className={`btn hover:bg-[#4361EE4D] rounded-full text-lg`}>About</NavLink></li>
+    const navLink = <div className="flex flex-col lg:flex-row gap-4 z-10 list-none">
+        <li><NavLink to='/' className={`btn btn-outline  rounded-full text-lg`}>Home</NavLink></li>
+        <li><NavLink to='/allartcrafts' className={`btn btn-outline  rounded-full text-lg`}>All Art & Crafts</NavLink></li>
+        <li><NavLink to='/addCraft' className={`btn btn-outline  rounded-full text-lg`}>Add Craft Item</NavLink></li>
+        <li><NavLink to='/myartcrafts' className={`btn btn-outline  rounded-full text-lg`}>My Art & Crafts</NavLink></li>
     </div>
     return (
-        <div className="flex items-center justify-between mb-4 my-8">
-            <Link to='/'>
-                <h1 className="btn font-bold text-2xl ml-8">Logo</h1>
-            </Link>
+        <div className="flex items-center justify-between p-2 mb-4 my-3 shadow-lg rounded-xl">
+            <div className="flex flex-row">
+                <img src="/images/icon.png" alt="" />
+                <a className="flex items-center text-4xl font-bold bg-gradient-to-r from-[#4625eb] via-[#1284bd] to-[#05f5dd] bg-clip-text text-transparent">CanvasCreations</a>
+            </div>
             <div>{navLink}</div>
             <div>
                 {user ? (
@@ -69,12 +68,12 @@ const Navbar = () => {
                                 <img alt="user photo" className="" src={user.photoURL} />
                             </div>
                         </Link>
-                        <button onClick={handleSignOut} className="btn hover:bg-[#4361EE4D] rounded-full text-lg">Sign Out</button>
+                        <button onClick={handleSignOut} className="btn hover:bg-red-500 hover:text-white  rounded-full text-lg">Sign Out</button>
                     </div>
                 ) : (
                     <>
-                        <Link to='/login' className="btn hover:bg-[#4361EE4D] rounded-full text-lg">Login</Link>
-                        <Link to='/register' className="btn hover:bg-[#4361EE4D] rounded-full text-lg">Register</Link>
+                        <Link to='/login' className="btn btn-outline rounded-full text-lg">Login</Link>
+                        <Link to='/register' className="btn btn-outline rounded-full text-lg">Register</Link>
                     </>
                 )}
             </div>

@@ -51,7 +51,7 @@ const AddCraft = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="bg-[#f4f3f0] py-24 px-48">
+            <div className="bg-[#3e8181] py-24 px-48">
                 <div className="text-center pb-8">
                     <h2 className="text-4xl font-semibold">Add Craft Item</h2>
                 </div>

@@ -6,13 +6,12 @@ import UpdateCraft from "../components/UpdateCraft/UpdateCraft";
 import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
-import ContactUs from "../components/ContactUs/ContactUs";
-import AboutUs from "../components/AboutUs/AboutUs";
 import ContentDetails from "../components/Home/ContentDetails";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import MyArtCrafts from "../components/MyArtCrafts/MyArtCrafts";
 import UserProfile from "../components/UserProfile/UserProfile";
+import CategoryCardDetails from "../components/Home/CategoryCardDetails";
 
 const router = createBrowserRouter([
     {
@@ -56,19 +55,16 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
             },
             {
-                path: '/contactus',
-                element: <ContactUs></ContactUs>
-            },
-            {
-                path: '/aboutus',
-                element: <AboutUs></AboutUs>
-            },
-            {
                 path: '/craft/:id',
                 element: <PrivateRoute><ContentDetails></ContentDetails></PrivateRoute>,
                 // loader: () => fetch(`https://b9-a-assignment-10-server-theta.vercel.app/craft/${params.id}`)
                 loader: ({ params }) => fetch(`https://b9-a-assignment-10-server-theta.vercel.app/craft/${params.id}`)
 
+            },
+            {
+                path: '/categorydetails/:id',
+                element: <CategoryCardDetails></CategoryCardDetails>,
+                loader: ({ params }) => fetch(`https://b9-a-assignment-10-server-theta.vercel.app/category/id/${params.id}`)
             }
         ]
     }

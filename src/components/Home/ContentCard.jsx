@@ -18,7 +18,7 @@ const ContentCard = ({ craft }) => {
                 {/* <p>{rating}</p>
                 <p>{stockstatus}</p> */}
                 <div className="card-actions justify-end">
-                    <Link to={`/craft/${_id}`} className="btn bg-blue-500 hover:bg-blue-800 text-white font-bold rounded-xl">View</Link>
+                    <Link to={`/craft/${_id}`} className="btn text-lg bg-[#21c6b5] hover:bg-[#22786f] text-white font-bold rounded-xl">View</Link>
                 </div>
             </div>
         </div>
