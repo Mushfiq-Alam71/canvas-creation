@@ -3,7 +3,6 @@ import Banner from "../Header/Banner";
 import Navbar from "../Header/Navbar";
 import { useState } from "react";
 import Footer from "../Footer/Footer";
-import UserCrafts from "../Users/UserCrafts";
 
 const AllArtCrafts = () => {
     const loadedCrafts = useLoaderData();

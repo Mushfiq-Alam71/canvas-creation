@@ -11,7 +11,6 @@ import AboutUs from "../components/AboutUs/AboutUs";
 import ContentDetails from "../components/Home/ContentDetails";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
-import UserCrafts from "../components/Users/UserCrafts";
 import MyArtCrafts from "../components/MyArtCrafts/MyArtCrafts";
 import UserProfile from "../components/UserProfile/UserProfile";
 
@@ -37,7 +36,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myartcrafts',
-                elemenet: <MyArtCrafts></MyArtCrafts>
+                element: <MyArtCrafts></MyArtCrafts>
             },
             {
                 path: '/updateCraft/:id',
@@ -70,11 +69,6 @@ const router = createBrowserRouter([
                 // loader: () => fetch(`https://b9-a-assignment-10-server-theta.vercel.app/craft/${params.id}`)
                 loader: ({ params }) => fetch(`https://b9-a-assignment-10-server-theta.vercel.app/craft/${params.id}`)
 
-            },
-            {
-                path: "/users",
-                element: <UserCrafts></UserCrafts>,
-                loader: () => fetch('https://b9-a-assignment-10-server-theta.vercel.app/user')
             }
         ]
     }

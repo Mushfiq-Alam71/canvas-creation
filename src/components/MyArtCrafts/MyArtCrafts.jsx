@@ -7,7 +7,7 @@ const MyArtCrafts = () => {
     const { user } = useContext(AuthContext);
     const [item, setItem] = useState([]);
     useEffect(() => {
-        fetch(`https://b9-a-assignment-10-server-theta.vercel.app/craft/${user?.email}`)
+        fetch(`https://b9-a-assignment-10-server-theta.vercel.app/craft/email/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data);
@@ -21,6 +21,7 @@ const MyArtCrafts = () => {
                 item.map(c => (
                     <div key={item.id}>
                         <h1>{c.itemname}</h1>
+                        <img src={c.photo} alt="" />
                     </div>
                 ))
             }
