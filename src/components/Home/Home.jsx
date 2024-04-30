@@ -27,17 +27,17 @@ const Home = () => {
         <div className="">
             <Navbar></Navbar>
             <Banner></Banner>
-            <div className="border-b-4 border-dashed border-gray-500 mt-12 mb-"></div>
+            <div className="border-b-4 border-dashed border-gray-500 mt-12"></div>
             <Intro></Intro>
             <div className="border-b-4 border-dashed border-gray-500 my-8"></div>
-            <div className="flex flex-col">
+            <div className="flex flex-col lg:ml-0 ml-2">
                 <div className="flex flex-col text-left pb-6 lg:pb-12 lg:pt-4">
                     <p className="text-[#34cfbf] font-semibold text-xl pb-[20px]">OUR COLLECTIONS</p>
                     <h1 className="font-bold text-[30px] lg:text-[45px] pb-4">We have collections of different category and variety of real estate properties.</h1>
                     <p className="font-normal text-base text-[#808080]">Welcome to our vibrant canvas of creativity! Dive into a world where every stroke tells a story and every hue ignites emotion. Our curated collection boasts an array of masterpieces, from captivating landscapes to evocative portraits. Immerse yourself in the beauty of watercolors, the richness of oils, and the charm of sketches. Each piece is crafted with passion and skill, promising to add a touch of elegance to your space. With secure transactions and worldwide shipping, exploring art has never been easier. Find your perfect masterpiece today and let it inspire, enchant, and elevate your surroundings with timeless beauty.</p>
                 </div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 pb-8 pt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pb-8 pt-4 lg:ml-0 ml-6">
                 {
                     loadedCrafts.map(craft =>
                         <ContentCard
@@ -50,12 +50,12 @@ const Home = () => {
             </div>
             <div className="border-b-4 border-dashed border-gray-500 my-8"></div>
             <div className="flex flex-col">
-                <div className="flex flex-col text-left pb-6 lg:pb-2 lg:pt-4">
-                    <p className="text-[#34cfbf] font-semibold text-xl pb-[20px]">CATEGORY</p>
+                <div className="flex flex-col text-left pb-6 lg:pb-2 lg:pt-4 lg:ml-0 ml-2">
+                    <p className="text-[#34cfbf] font-semibold text-xl pb-[20px] ">CATEGORY</p>
                     <h1 className="font-bold text-[30px] lg:text-[45px] pb-4">We have collections of different category.</h1>
                 </div>
             </div>
-            <div className="pb-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="pb-12 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:px-0 px-4">
                 {
                     categories.map(category => <CategoryCard key={category._id} catag={category}></CategoryCard>)
                 }
@@ -64,7 +64,7 @@ const Home = () => {
             <div className="text-center">
                 <h1 className="text-4xl font-bold">Out Customer Review</h1>
             </div>
-            <div className="flex flex-col lg:flex-row pt-8 pb-12">
+            <div className="flex flex-col lg:flex-row pt-8 pb-12 lg:ml-0 ml-4 gap-4">
                 <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800" bis_skin_checked="1">
                     <div className="flex justify-between p-4" bis_skin_checked="1">
                         <div className="flex space-x-4" bis_skin_checked="1">

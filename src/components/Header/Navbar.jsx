@@ -44,7 +44,7 @@ const Navbar = () => {
         <li className="w-full"><NavLink to='/myartcrafts' className={`btn btn-outline  rounded-full text-lg whitespace-nowrap`}>My Art & Crafts</NavLink></li>
     </div>
     return (
-        <div className="flex items-center justify-between p-2 mb-4 my-3 shadow-lg rounded-xl relative z-50">
+        <div className="block md:flex lg:flex items-center justify-between p-2 mb-4 my-3 shadow-lg rounded-xl relative z-50">
             {
                 menu && <div className="block lg:hidden absolute top-16 left-0 h-screen w-2/5 bg-gray-100 z-10">
                     {navLink}
