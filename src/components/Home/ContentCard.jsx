@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const ContentCard = ({ craft }) => {
-    const { _id, itemname, subcategory, description, price, photo } = craft;
+    const { _id, itemname, subcategory, description, price, photo, } = craft;
     return (
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
             <figure><img src={photo} alt="Shoes" /></figure>
@@ -13,8 +13,9 @@ const ContentCard = ({ craft }) => {
                         ? <p>{description.slice(0, 160)} <Link to={`/craft/${_id}`} className="text-blue-500 text-base font-semibold">Read More...</Link></p>
                         : <p>{description}</p>
                 }
-                <p>{subcategory}</p>
-                <p>{price}</p>
+                <p><span className="text-sm font-bold">Sub-Category:</span> {subcategory}</p>
+                <p><span className="text-sm font-bold">Price:</span> ${price}</p>
+                <p><span className="text-sm font-bold">Price:</span> ${price}</p>
                 {/* <p>{rating}</p>
                 <p>{stockstatus}</p> */}
                 <div className="card-actions justify-end">

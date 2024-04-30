@@ -1,12 +1,16 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../Header/Banner";
 import Navbar from "../Header/Navbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 
 const AllArtCrafts = () => {
     const loadedCrafts = useLoaderData();
     const [crafts, setCrafts] = useState(loadedCrafts);
+
+    useEffect(() => {
+        document.title = "All Art & Crafts";
+    }, [])
     return (
         <div className="">
             <Navbar></Navbar>

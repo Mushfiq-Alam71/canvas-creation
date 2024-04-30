@@ -15,6 +15,11 @@ const MyArtCrafts = () => {
                 setItem(data);
             })
     }, [user])
+
+    useEffect(() => {
+        document.title = "My Collections";
+    }, [])
+
     return (
         <div>
             <Navbar></Navbar>

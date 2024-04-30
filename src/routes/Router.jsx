@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myartcrafts',
-                element: <MyArtCrafts></MyArtCrafts>
+                element: <PrivateRoute><MyArtCrafts></MyArtCrafts></PrivateRoute>
             },
             {
                 path: '/updateCraft/:id',

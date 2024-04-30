@@ -1,11 +1,15 @@
 import Swal from "sweetalert2";
 import Navbar from "../Header/Navbar";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import Footer from "../Footer/Footer";
 
 const AddCraft = () => {
     const { user } = useContext(AuthContext);
+
+    useEffect(() => {
+        document.title = "Add Item";
+    }, [])
 
     const handleAddCraft = event => {
         event.preventDefault();
