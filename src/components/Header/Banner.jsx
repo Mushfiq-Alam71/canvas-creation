@@ -7,6 +7,8 @@ import banner1 from '../../../public/images/banner1.jpg';
 import banner2 from '../../../public/images/banner2.jpg';
 import banner3 from '../../../public/images/banner3.jpg';
 import banner4 from '../../../public/images/banner4.jpg';
+import { Typewriter } from 'react-simple-typewriter'
+
 
 const Banner = () => {
     return (
@@ -14,7 +16,19 @@ const Banner = () => {
             <img className='absolute' src={``} alt="" />
             <div className='flex flex-col items-start  flex-wrap'>
                 <p className='text-[#1284bd] font-semibold text-xl pb-[10px] lg:pb-[20px]'>Masterpiece</p>
-                <h1 className='font-bold text-left text-[35px] lg:text-[60px] pb-[10px] lg:pb-[15px] animate__bounceIn white-space-wrap' >Discover Your Next Masterpiece: Dive into Our Collection..!</h1>
+                <h1 className='font-bold text-left text-[35px] lg:text-[60px] pb-[10px] lg:pb-[15px] text-black animate__bounceIn white-space-wrap' >Discover Your Next <span style={{ color: 'black', fontWeight: 'bold' }}>
+                    {/* Style will be inherited from the parent element */}
+                    <Typewriter
+                        words={['Masterpiece', 'Work of Art', 'Splendor', 'Marvel']}
+                        loop={100}
+                        cursor
+                        cursorStyle='_'
+                        typeSpeed={100}
+                        deleteSpeed={70}
+                        delaySpeed={2000}
+                    />
+                </span></h1>
+
                 <p className='font-normal text-base text-left text-[#808080] white-space-wrap'>Discover your dream home in our exclusive collection of luxurious residences. Our contemporary properties offer spacious layouts, elegant designs, and modern amenities, creating a tranquil and stylish living experience. Explore our diverse selection of homes and find the perfect blend of comfort and sophistication today.</p>
             </div>
             <div>

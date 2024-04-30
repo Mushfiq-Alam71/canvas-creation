@@ -10,7 +10,7 @@ const AllArtCrafts = () => {
     return (
         <div className="">
             <Navbar></Navbar>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto py-12">
                 <table className="table">
                     {/* head */}
                     <thead>

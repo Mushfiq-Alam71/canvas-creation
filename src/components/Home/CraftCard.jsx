@@ -42,21 +42,21 @@ const CraftCard = ({ craft, crafts, setCrafts }) => {
     return (
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
             <figure><img src={photo} alt="Shoes" /></figure>
-            <div className="card-body">
+            <Link to={`/craft/${_id}`} className="card-body">
                 <h2 className="card-title">{itemname}</h2>
                 <p>{subcategory}</p>
                 <p>{price}</p>
                 <p>{stockstatus}</p>
-                <div className="card-actions justify-evenly">
-                    <button className="btn bg-blue-500 hover:bg-blue-800 text-white font-bold rounded-full">View</button>
+                <div className="card-actions justify-between">
+                    <Link to={`/craft/${_id}`} className="btn text-lg btn-outline font-bold rounded-xl">View</Link>
                     <Link to={`/updateCraft/${_id}`}>
-                        <button className="btn bg-green-500 hover:bg-green-800 text-2xl text-white rounded-full"><FiEdit /></button>
+                        <button className="btn btn-outline text-2xl   rounded-full"><FiEdit /></button>
                     </Link>
                     <button
-                        onClick={() => handleDelete(_id)} className="btn bg-red-500 hover:bg-red-800 text-2xl text-white rounded-full"><MdDelete />
+                        onClick={() => handleDelete(_id)} className="btn btn-outline hover:bg-red-500 text-2xl rounded-full"><MdDelete />
                     </button>
                 </div>
-            </div>
+            </Link>
         </div>
     );
 };

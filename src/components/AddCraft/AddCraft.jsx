@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import Navbar from "../Header/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import Footer from "../Footer/Footer";
 
 const AddCraft = () => {
     const { user } = useContext(AuthContext);
@@ -51,11 +52,11 @@ const AddCraft = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="bg-[#3e8181] py-24 px-48">
+            <div className=" bg-gradient-to-r from-[#2556eb84] via-[#1284bd7d] to-[#05f5dd80] py-24 px-48 rounded-xl mb-8">
                 <div className="text-center pb-8">
                     <h2 className="text-4xl font-semibold">Add Craft Item</h2>
                 </div>
-                <form onSubmit={handleAddCraft} className="border-2 p-8 rounded-2xl ">
+                <form onSubmit={handleAddCraft} className="border-2 border-blue-900 p-8 rounded-2xl">
 
                     {/* form row 1*/}
                     <div className="md:flex gap-4">
@@ -177,6 +178,7 @@ const AddCraft = () => {
                     <input type="submit" className="btn btn-block text-white bg-[#04041cd8] hover:bg-[#04041cbf]" value="Add Craft" />
                 </form>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
