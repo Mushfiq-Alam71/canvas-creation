@@ -12,7 +12,7 @@ import { Typewriter } from 'react-simple-typewriter'
 
 const Banner = () => {
     return (
-        <div className="relative flex flex-col lg:flex-row gap-12 items-center justify-center mx-auto lg:pb-12 md:py-6 px-16 bg-blue-100 rounded-lg lg:pt-0 pt-8">
+        <div className="relative flex flex-col lg:flex-row gap-12 items-center justify-center mx-auto lg:pb-12 md:py-6 px-16 bg-blue-100 rounded-lg lg:pt-8 pt-8">
             <img className='absolute' src={``} alt="" />
             <div className='flex flex-col items-start  flex-wrap'>
                 <p className='text-[#1284bd] font-semibold text-xl pb-[10px] lg:pb-[20px]'>Masterpiece</p>
